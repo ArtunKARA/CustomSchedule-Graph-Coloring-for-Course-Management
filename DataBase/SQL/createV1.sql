@@ -1,0 +1,25 @@
+--mysql
+CREATE DATABASE SCHOOL;
+USE SCHOOL;
+
+CREATE TABLE Egitmenler (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    isim NVARCHAR(50) NOT NULL,
+    musaitGunler NVARCHAR(13) NOT NULL
+);
+
+CREATE TABLE SaatAraliklari(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    musaitSaatler NVARCHAR(72) NOT NULL,
+    gun NVARCHAR(1) NOT NULL,
+    egitmenId INT NOT NULL,
+    FOREIGN KEY (egitmenId) REFERENCES Egitmenler(id)
+);
+
+CREATE TABLE Dersler(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    isim NVARCHAR(50) NOT NULL,
+    ogrenciSayisi INT NOT NULL,
+    egitmenId INT NOT NULL,
+    FOREIGN KEY (egitmenId) REFERENCES Egitmenler(id)
+);
