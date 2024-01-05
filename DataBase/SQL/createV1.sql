@@ -1,4 +1,6 @@
---mysql
+-- mysql
+-- Pazartesi:Pt Salı:Sa Çarşamba:Ça Perşembe:Pe Cuma:Cu Cumartesi:Ct Pazar:Pa
+-- (00:00-01:00)=00 (01:00-02:00)=01 (02:00-03:00)=02 (03:00-04:00)=03 (04:00-05:00)=04 (05:00-06:00)=05 (06:00-07:00)=06 (07:00-08:00)=07 (08:00-09:00)=08 (09:00-10:00)=09 (10:00-11:00)=10 (11:00-12:00)=11 (12:00-13:00)=12 (13:00-14:00)=13 (14:00-15:00)=14 (15:00-16:00)=15 (16:00-17:00)=16 (17:00-18:00)=17 (18:00-19:00)=18 (19:00-20:00)=19 (20:00-21:00)=20 (21:00-22:00)=21 (22:00-23:00)=22 (23:00-00:00)=23
 CREATE DATABASE SCHOOL;
 USE SCHOOL;
 
@@ -11,7 +13,7 @@ CREATE TABLE Egitmenler (
 CREATE TABLE SaatAraliklari(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     musaitSaatler NVARCHAR(72) NOT NULL,
-    gun NVARCHAR(1) NOT NULL,
+    gun NVARCHAR(2) NOT NULL,
     egitmenId INT NOT NULL,
     FOREIGN KEY (egitmenId) REFERENCES Egitmenler(id)
 );
